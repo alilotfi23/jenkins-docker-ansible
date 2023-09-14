@@ -5,5 +5,5 @@
  - loadpath: /root/dev/apache-jenkins.tar
  - containername: apache-jenkins
  - containerimage: alilotfi/jenkins-docker-ansible:latest
- - portnum: "8585:8080"
+ - portnum: "8585:80"
  - dir: /root/dev/
