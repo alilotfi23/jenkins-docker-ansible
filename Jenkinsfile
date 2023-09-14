@@ -23,7 +23,7 @@ pipeline {
 
       steps {
 
-        sh 'ansible-playbook -i /etc/ansible/hosts -u root /var/lib/jenkins/workspace/jenkins-docker-ansible/ansible/'
+        sh 'ansible-playbook -i /etc/ansible/hosts -u root /var/lib/jenkins/workspace/jenkins-docker-ansible/ansible/play.yml'
 
       }
     }
