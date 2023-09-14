@@ -35,3 +35,10 @@
       file:
         path: "{{ dir }}"
         state: absent
+    - name: Tag and push to docker hub
+      docker_image:
+        name: "{{ pushname }}"
+        repository: "{{ repo }}"
+        tag: "{{ imagetag }}"
+        push: yes
+        source: local
