@@ -25,7 +25,7 @@ pipeline {
 
       steps {
 
-        sh 'ansible-playbook -I /etc/ansible/hosts -u root /etc/ansible/playbooks/play2/file.yml'
+        sh 'ansible-playbook -i /etc/ansible/hosts -u root /etc/ansible/playbooks/play2/file.yml'
 
       }
     }
