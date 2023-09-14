@@ -1,9 +1,9 @@
 ---
- - src: ./jenkins2.tar
+ - src: ./apache-jenkins.tar
  - dest: /root/dev/
- - imageloadname: jenkins/jenkins:latest
- - loadpath: /root/dev/jenkins2.tar
- - containername: jenkins
- - containerimage: jenkins/jenkins:latest
+ - imageloadname: alilotfi/jenkins-docker-ansible:latest
+ - loadpath: /root/dev/apache-jenkins.tar
+ - containername: apache-jenkins
+ - containerimage: alilotfi/jenkins-docker-ansible:latest
  - portnum: "8585:8080"
  - dir: /root/dev/
