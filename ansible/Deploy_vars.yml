@@ -6,4 +6,4 @@
  - containername: jenkins
  - containerimage: jenkins/jenkins:latest
  - portnum: "8585:8080"
-
+ - dir: /root/dev/
