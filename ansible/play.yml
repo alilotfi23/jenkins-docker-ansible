@@ -3,42 +3,47 @@
   hosts: all
   connection: local
   vars_files:
-     - Archive_vars.yml
+     - Archive_vars.yml  # Load variables specific to archiving images
   tasks:
-    - name: Archive image localy
+    - name: Archive image locally
       docker_image:
-        name: "{{ image }}"
-        archive_path: "{{ archive }}"
-        source: local
+        name: "{{ image }}"  # Specify the name of the Docker image to archive
+        archive_path: "{{ archive }}"  # Define the path where the archived image will be stored
+        source: local  # Indicate that the source of the image is local
+
 - name: Deploy container
   hosts: all
   vars_files:
-     - Deploy_vars.yml
+     - Deploy_vars.yml  # Load variables specific to deploying containers
   tasks:
-    - name: cpoy image to dev
+    - name: Copy image to dev
       copy:
-        src: "{{ src }}"
-        dest: "{{ dest }}"
-    - name: load image
+        src: "{{ src }}"  # Source path of the image to copy
+        dest: "{{ dest }}"  # Destination path where the image will be copied
+
+    - name: Load image
       docker_image:
-        name: "{{ imageloadname }}"
-        load_path: "{{ loadpath }}"
-        source: load
+        name: "{{ imageloadname }}"  # Name of the image to load
+        load_path: "{{ loadpath }}"  # Path from which to load the image
+        source: load  # Indicate that the image is being loaded
+
     - name: Start container
       docker_container:
-        name: "{{ containername }}"
-        image: "{{ containerimage }}"
+        name: "{{ containername }}"  # Name to assign to the Docker container
+        image: "{{ containerimage }}"  # Specify the image to use for the container
         ports:
-          - "{{ portnum }}"
-        state: started
+          - "{{ portnum }}"  # Port mapping for the container
+        state: started  # Ensure the container is started
+
     - name: Remove dev directory
       file:
-        path: "{{ dir }}"
-        state: absent
-    - name: Tag and push to docker hub
+        path: "{{ dir }}"  # Path to the directory to be removed
+        state: absent  # Specify that the directory should be absent (deleted)
+
+    - name: Tag and push to Docker Hub
       docker_image:
-        name: "{{ pushname }}"
-        repository: "{{ repo }}"
-        tag: "{{ imagetag }}"
-        push: yes
-        source: local
+        name: "{{ pushname }}"  # Name of the image to tag and push
+        repository: "{{ repo }}"  # Repository on Docker Hub to push the image to
+        tag: "{{ imagetag }}"  # Tag to assign to the image
+        push: yes  # Indicate that the image should be pushed to the repository
+        source: local  # Specify that the source of the image is local
