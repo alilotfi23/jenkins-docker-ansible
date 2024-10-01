@@ -1,4 +1,4 @@
-# Use a smaller base image for efficiency
+# Use a smaller base image for efficiency and reduce image size
 FROM centos:7
 
 # Set metadata for the image
