@@ -47,7 +47,7 @@ A simple DevOps Project (CI/CD) with Jenkins, Docker, and Ansible.
 ### Docker Setup
 
 1. **Dockerfile**:
-    - Ensure you have a Dockerfile in your repository that Jenkins will use to build the Docker image.
+    - Please make sure you have a Dockerfile in your repository that Jenkins will use to build the Docker image.
 
 ### Ansible Setup
 
