@@ -21,7 +21,7 @@ A simple DevOps Project (CI/CD) with Jenkins, Docker, and Ansible.
 
 5. **Ansible Deployment**:
     - Ansible pulls the Docker image from the registry and deploys it to the development environment.
-    - Ansible can also push the image to other environments as needed (e.g., staging, production).
+    - Ansible can also push the image to other environments (e.g., staging, production).
 
 ## Prerequisites
 
