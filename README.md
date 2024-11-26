@@ -99,7 +99,7 @@ pipeline {
 
 2. **Monitor the Pipeline**:
     - Monitor the pipeline's progress in the Jenkins dashboard.
-    - Ensure each stage completes successfully.
+    - Ensure each stage is completed successfully.
 
 ## Conclusion
 
